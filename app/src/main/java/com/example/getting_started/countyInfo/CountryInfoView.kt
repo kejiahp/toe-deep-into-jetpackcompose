@@ -11,6 +11,7 @@ import com.example.getting_started.countyInfo.components.CountryCard
 import com.example.getting_started.countyInfo.data.CountryInfo
 import com.example.getting_started.ui.theme.Getting_startedTheme
 import com.example.getting_started.R
+import com.example.getting_started.countyInfo.components.CountryCardWithConstraintLayout
 
 @Composable
 private fun CountryInfoView() {
@@ -28,12 +29,14 @@ fun CountryInfoMainView() {
         subRegion = "The Village Hidden in the Leaves",
         currencySymbol = "両",
         currencyName = "Ryo",
-        inUSD = 0f,
-        inYen = 0.01f
+        inUSD = 0.01f,
+        inYen = 10.0f,
+        commonName = "Konouha"
     )
     Getting_startedTheme {
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.surface) {
-            CountryCard(countryCardInfo)
+//            CountryCard(countryCardInfo)
+            CountryCardWithConstraintLayout(countryCardInfo)
         }
 
     }

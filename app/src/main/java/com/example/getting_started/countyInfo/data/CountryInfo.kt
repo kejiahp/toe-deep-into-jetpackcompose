@@ -4,6 +4,7 @@ data class CountryInfo(
     val flagId: Int,
     val nationalCapital: String,
     val officialName: String,
+    val commonName: String,
     val region: String,
     val subRegion: String,
     val currencySymbol: String,

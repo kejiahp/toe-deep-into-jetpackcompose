@@ -9,10 +9,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 
 @Composable
-fun CurrencyText(currText: String) {
+fun CurrencyText(currText: String, modifier: Modifier?) {
     Text(
         text = currText,
-        modifier = Modifier.Companion
+        modifier = modifier ?: Modifier.Companion
             .fillMaxWidth(0.1f)
             .drawBehind {
                 drawCircle(

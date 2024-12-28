@@ -113,14 +113,14 @@ fun CountryCard(cardInfo: CountryInfo) {
                     horizontalArrangement = Arrangement.SpaceEvenly,
                     verticalAlignment = Alignment.Companion.CenterVertically
                 ) {
-                    CurrencyText(currText = cardInfo.currencySymbol)
+                    CurrencyText(currText = cardInfo.currencySymbol, modifier = null)
                     Text(
                         text = cardInfo.currencyName,
                         modifier = Modifier.Companion.fillMaxWidth(0.3f),
                         textAlign = TextAlign.Companion.Center
                     )
                     Column(modifier = Modifier.Companion.fillMaxWidth(0.4f)) {
-                        Text(text = "${cardInfo.inYen} yen", textAlign = TextAlign.Companion.Center)
+                        Text(text = "${cardInfo.inYen} YEN", textAlign = TextAlign.Companion.Center)
                         Text(text = "${cardInfo.inUSD} USD", textAlign = TextAlign.Companion.Center)
                     }
                 }
