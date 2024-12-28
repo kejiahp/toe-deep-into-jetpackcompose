@@ -8,10 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.getting_started.countyInfo.CountryInfoMainView
 
-
-import com.example.getting_started.ui.theme.Getting_startedTheme
-
-
 class MainActivity : ComponentActivity() {
     /**
      * Init viewModel outside the onCreate lifecycle method, since viewModel, by default, is lifecycle aware; to preserve component state on change in device orientation (in which onSaveInstanceState & onRestoreInstanceState are triggered)
