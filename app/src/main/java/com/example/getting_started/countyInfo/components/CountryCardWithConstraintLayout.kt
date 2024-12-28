@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.draw.shadow
@@ -32,8 +33,8 @@ import com.example.getting_started.countyInfo.data.CountryInfo
 fun CountryCardWithConstraintLayout(cardInfo: CountryInfo) {
     ConstraintLayout(
         modifier = Modifier
-            .wrapContentHeight()
-            .fillMaxWidth()
+            .fillMaxWidth(1.0f)
+            .wrapContentHeight(align = Alignment.Top)
             .padding(2.dp)
             .shadow(
                 1.dp,
@@ -140,23 +141,23 @@ fun CountryCardWithConstraintLayout(cardInfo: CountryInfo) {
         )
 
         Text(
-            text = "${cardInfo.inYen} YEN",
+            text = cardInfo.mobileCode,
             modifier = Modifier
                 .constrainAs(mobileCode) {
                     top.linkTo(subregion.bottom)
                     end.linkTo(parent.end)
                 }
-                .width(100.dp)
+                .width(50.dp)
         )
 
         Text(
-            text = "${cardInfo.inUSD} USD",
+            text = cardInfo.tld,
             modifier = Modifier
                 .constrainAs(tld) {
                     top.linkTo(mobileCode.bottom)
                     end.linkTo(parent.end)
                 }
-                .width(100.dp)
+                .width(50.dp)
         )
 
     }

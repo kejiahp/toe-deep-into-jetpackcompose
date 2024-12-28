@@ -1,6 +1,9 @@
 package com.example.getting_started.countyInfo
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -12,6 +15,7 @@ import com.example.getting_started.countyInfo.data.CountryInfo
 import com.example.getting_started.ui.theme.Getting_startedTheme
 import com.example.getting_started.R
 import com.example.getting_started.countyInfo.components.CountryCardWithConstraintLayout
+import com.example.getting_started.countyInfo.data.getCountryList
 
 @Composable
 private fun CountryInfoView() {
@@ -21,22 +25,20 @@ private fun CountryInfoView() {
 
 @Composable
 fun CountryInfoMainView() {
-    val countryCardInfo: CountryInfo = CountryInfo(
-        flagId = R.drawable.madara,
-        nationalCapital = "Konouha",
-        officialName = "Konohagakure no Sato",
-        region = "Land of Fire",
-        subRegion = "The Village Hidden in the Leaves",
-        currencySymbol = "両",
-        currencyName = "Ryo",
-        inUSD = 0.01f,
-        inYen = 10.0f,
-        commonName = "Konouha"
-    )
+    val countries = getCountryList();
+
     Getting_startedTheme {
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.surface) {
-//            CountryCard(countryCardInfo)
-            CountryCardWithConstraintLayout(countryCardInfo)
+//            Column(modifier = Modifier.fillMaxSize()) {
+//                countries.forEach {
+//                    CountryCardWithConstraintLayout(it)
+//                }
+//            }
+            LazyColumn {
+                items(countries) {
+                    CountryCardWithConstraintLayout(it)
+                }
+            }
         }
 
     }

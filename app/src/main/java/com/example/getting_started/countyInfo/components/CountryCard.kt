@@ -120,8 +120,8 @@ fun CountryCard(cardInfo: CountryInfo) {
                         textAlign = TextAlign.Companion.Center
                     )
                     Column(modifier = Modifier.Companion.fillMaxWidth(0.4f)) {
-                        Text(text = "${cardInfo.inYen} YEN", textAlign = TextAlign.Companion.Center)
-                        Text(text = "${cardInfo.inUSD} USD", textAlign = TextAlign.Companion.Center)
+                        Text(text = cardInfo.mobileCode, textAlign = TextAlign.Companion.Center)
+                        Text(text = cardInfo.tld, textAlign = TextAlign.Companion.Center)
                     }
                 }
             }
